@@ -15,3 +15,9 @@
 	- Separates JS files for each page with vendors file containing all shared code.
 	- CSS autoprefixed, media queries joined, minified, comments removed.
 	- Images optimization.
+
+## Usage:
+	- #### Structure:
+		- js files for pages are in 'src' page;
+		- pug templates for pages are in 'src/pug/pages';
+		- scss files for pages are in 'assets'
