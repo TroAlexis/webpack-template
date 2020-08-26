@@ -22,6 +22,7 @@ Use subtree push to send it to the `gh-pages` branch on GitHub.
 
 ```sh
 git subtree push --prefix dist origin gh-pages
+git push origin `git subtree split --prefix dist master`:gh-pages --force
 ```
 
 Boom. If your folder isn’t called `dist`, then you’ll need to change that in each of the commands above.
@@ -48,4 +49,5 @@ git gh-deploy path/to/your/site
 
 ### FOR COMFORT PURPOSES :
 ```git config --global alias.stpp 'subtree push --prefix dist origin gh-pages'
+git config --global alias.stppf "push origin `git subtree split --prefix dist master`:gh-pages --force"
 

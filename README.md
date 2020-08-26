@@ -6,6 +6,9 @@
 	- Automatic creation of entry points.
 	- Supports PUG, SCSS.
 	- HMR working with SCSS, JS, PUG files.
+	- Connect from any device in dev mode, firewall provided.
+		- Use 'ip addr show' to find out the ip.
+		- <your-ip>:<port = 8081>/pages/<page>.html
 
 - #### PRODUCTION:
 	- Extracts CSS files into different chunks.
