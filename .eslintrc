@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base"],
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "no-underscore-dangle": ["error", {"allow":  ["_watch"]}],
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}],
+    "no-use-before-define": ["error", "nofunc"],
+    "no-unused-vars": "off",
+    "no-param-reassign": ["error", {"props": false}]
+  },
+  "env": {
+    "browser": true
+  }
+}
