@@ -9,35 +9,37 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:react" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1decacdd-56eb-4b4f-80d9-dcc57a8128b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scss/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.base.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/css/index.eb1baf4b2e1da788d657.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/js/common.e9e847357ec91cd0e628.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/js/index.a8c92e8797f5b818a6d1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/js/vendors.9871697091f4269e5f80.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/dist/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/pages/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/card-list/card-list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/card-list/card-list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/card/card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/card/card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/search-box/search-box.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/search-box/search-box.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/modules/text-field.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/card-list/card-list.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/card-list/card-list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/card/card.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/card/card.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/search-box/search-box.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/search-box/search-box.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pug/pages/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/pug/pages/index.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +79,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.62" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Projects/frontend-ip-tracker" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -92,12 +94,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/img" />
       <recent name="$PROJECT_DIR$/src/components/App" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="npm.deploy">
@@ -156,6 +158,7 @@
       <workItem from="1601400281846" duration="2553000" />
       <workItem from="1601459286566" duration="1118000" />
       <workItem from="1601655618609" duration="637000" />
+      <workItem from="1601659596324" duration="131000" />
     </task>
     <task id="LOCAL-00001" summary="Added more features:&#10;- bundle analyzer,&#10;- friendly errors plugin,&#10;- environment plugin,&#10;- js and css linters,&#10;- added aliases,&#10;- improved dev-build performance,&#10;- resolve-url-loader for scss,&#10;- refactored postcss config,&#10;-">
       <created>1601132710520</created>
@@ -181,7 +184,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="react" />
                       </list>
                     </value>
                   </entry>
@@ -225,12 +228,13 @@
     </state>
     <state x="2120" y="138" width="1166" height="533" key="DiffContextDialog/1920.0.1366.768/0.35.1920.1045@1920.0.1366.768" timestamp="1601132612704" />
     <state x="2047" y="569" width="1166" height="533" key="DiffContextDialog/1920.413.1366.768/0.448.1920.632@1920.413.1366.768" timestamp="1601305817710" />
-    <state x="2386" y="545" width="424" height="482" key="FileChooserDialogImpl" timestamp="1601460801673">
-      <screen x="1920" y="413" width="1366" height="768" />
+    <state x="869" y="186" width="424" height="482" key="FileChooserDialogImpl" timestamp="1601659406434">
+      <screen x="214" y="0" width="1920" height="1080" />
     </state>
     <state x="466" y="161" width="424" height="482" key="FileChooserDialogImpl/0.35.1366.733@0.35.1366.733" timestamp="1601208381399" />
     <state x="900" y="574" key="FileChooserDialogImpl/0.448.3286.733@0.448.3286.733" timestamp="1601318382289" />
     <state x="2386" y="545" width="424" height="482" key="FileChooserDialogImpl/1920.413.1366.768/0.448.1920.632@1920.413.1366.768" timestamp="1601460801673" />
+    <state x="869" y="186" key="FileChooserDialogImpl/214.0.1920.1080/0.1080.1366.768@214.0.1920.1080" timestamp="1601659406434" />
     <state width="1366" height="646" key="GridCell.Tab.0.bottom" timestamp="1601406145141">
       <screen x="1920" y="413" width="1366" height="768" />
     </state>
@@ -314,10 +318,11 @@
     <state x="2092" y="449" key="SettingsEditor/0.448.3286.733@0.448.3286.733" timestamp="1601319266610" />
     <state x="2092" y="36" key="SettingsEditor/1920.0.1366.768/0.35.1920.1045@1920.0.1366.768" timestamp="1601133113442" />
     <state x="2092" y="448" key="SettingsEditor/1920.413.1366.768/0.448.1920.632@1920.413.1366.768" timestamp="1601376895531" />
-    <state x="2198" y="137" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1601132713425">
-      <screen x="1920" y="0" width="1366" height="768" />
+    <state x="605" y="193" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1601658485976">
+      <screen x="214" y="0" width="1920" height="1080" />
     </state>
     <state x="2198" y="137" width="800" height="526" key="Vcs.Push.Dialog.v2/1920.0.1366.768/0.35.1920.1045@1920.0.1366.768" timestamp="1601132713425" />
+    <state x="605" y="193" width="800" height="526" key="Vcs.Push.Dialog.v2/214.0.1920.1080/0.1080.1366.768@214.0.1920.1080" timestamp="1601658485976" />
     <state x="2876" y="543" width="597" height="483" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1601381310488">
       <screen x="1920" y="413" width="1366" height="768" />
     </state>
