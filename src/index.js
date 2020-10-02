@@ -4,7 +4,8 @@
 import './js';
 
 // SCSS
-import './assets/scss/shared.scss';
+import 'Scss/shared.scss';
 
-
-
+if (module.hot) {
+  module.hot.accept();
+}

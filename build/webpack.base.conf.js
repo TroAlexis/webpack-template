@@ -28,6 +28,7 @@ const ALIASES = {
   Scss: path.resolve(__dirname, `../src/${PATHS.assets}/scss`),
   Images: path.resolve(__dirname, `../src/${PATHS.assets}/img`),
   Fonts: path.resolve(__dirname, `../src/${PATHS.assets}/fonts`),
+  Components: path.resolve(__dirname, '../src/js/components'),
   Pug: path.resolve(__dirname, `../src/${PATHS.pug}`),
   Includes: path.resolve(__dirname, `../src/${PATHS.pug}/includes`),
 };
@@ -56,7 +57,7 @@ module.exports = {
     filename: `${PATHS.assets}/js/[name].${(process.env.NODE_ENV === 'production') ? '[contenthash].' : ''}js`,
     path: PATHS.dist,
     pathinfo: process.env.NODE_ENV === 'production',
-    publicPath: '/',
+    publicPath: '/react-monsters/',
   },
   optimization: {
     splitChunks: process.env.NODE_ENV === 'production' ? {
@@ -83,7 +84,7 @@ module.exports = {
       test: /\.pug$/,
       loader: ['pug-loader'],
     }, {
-      test: /\.js$/,
+      test: /\.(js|jsx)$/,
       loader: 'babel-loader',
       exclude: '/node_modules/',
     }, {

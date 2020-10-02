@@ -1,0 +1,18 @@
+.text-field {
+	@extend %input-common;
+	width: rem(320px);
+	height: rem(44px);
+
+	&::placeholder {
+		color: map-get($colors, 'main-25');
+
+		transition: color 0.3s ease-out;
+	}
+
+	&:focus,
+	&:hover {
+		&::placeholder {
+			color: map-get($colors, 'main-75');
+		}
+	}
+}

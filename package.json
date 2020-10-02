@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Fsd Task.",
   "main": "index.js",
+  "homepage": "https://troalexis.github.io/react-monsters",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.conf.js",
     "build": "NODE_ENV=production webpack --config ./build/webpack.build.conf.js",
@@ -14,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TroAlexis/fsd-challenge.git"
+    "url": "git+https://github.com/TroAlexis/react-monsters.git"
   },
   "keywords": [
     "fsd",
@@ -25,19 +26,23 @@
   "author": "TroAlexis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TroAlexis/fsd-challenge/issues"
+    "url": "https://github.com/TroAlexis/react-monsters/issues"
   },
-  "homepage": "https://troalexis.github.io/toxin-fsd",
   "dependencies": {
     "formatter.js-pebble": "^0.1.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.10.4",
     "@funboxteam/webpack-dev-server-firewall": "^2.0.0",
     "autoprefixer": "^9.7.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-pug": "^7.0.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.2.0",
@@ -47,7 +52,6 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-webpack-plugin": "^2.1.0",
-    "extract-css-chunks-webpack-plugin": "^4.7.5",
     "file-loader": "^4.2.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "gh-pages": "^3.1.0",
@@ -71,7 +75,6 @@
     "webpack": "^4.41.2",
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.9",
-    "webpack-dashboard": "^3.2.1",
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
   }

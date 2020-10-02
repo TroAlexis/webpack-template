@@ -5,9 +5,7 @@
 module.exports = {
   plugins: {
     autoprefixer: {},
-    'css-mqpacker': {
-      sort: true,
-    },
+    'css-mqpacker': {},
     cssnano: {
       preset: [
         'default', {
