@@ -1,22 +1,47 @@
 // px to rem
-@function rem($pixels, $context: $mainFontSize) {
-  @if (unitless($pixels)) {
-    $pixels: $pixels * 1px;
-  }
-  @if (unitless($context)) {
-    $context: $context * 1px;
-  }
-  @return $pixels / $context * 1rem;
+@function rem($pixels, $context: $font-size--main) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+	@return $pixels / $context * 1rem;
 }
 
 @mixin size($width,$height: $width) {
-  width: $width;
-  height: $height;
+	width: $width;
+	height: $height;
 }
 
-@mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}
+// MEDIA QUERIES MIXINS
+@mixin media($width) {
+	@media (max-width: $width) {
+		@content; }
+}
+
+@mixin media-phone-sm {
+	@media only screen
+		and (max-width: $width-phone--sm) {
+		@content; }
+}
+@mixin media-phone {
+	@media only screen
+		and (max-width: $width-phone) {
+		@content; }
+}
+@mixin media-tablet {
+	@media only screen
+		and (max-width: $width-tablet) {
+		@content; }
+}
+@mixin media-desktop-sm {
+	@media only screen
+		and (max-width: $width-desktop--sm) {
+		@content; }
+}
+@mixin media-desktop {
+	@media only screen
+		and (max-width: $width-desktop) {
+		@content; }
 }

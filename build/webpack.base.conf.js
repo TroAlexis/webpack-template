@@ -173,7 +173,12 @@ module.exports = {
     // Automatic creation of any html pages
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
-      filename: `./pages/${page.replace(/\.pug/, '.html')}`,
+      filename: `./${page.replace(/\.pug/, '.html')}`,
+      favicon: `${PATHS.src}/${PATHS.assets}/img/favicon.ico`,
+      minify: {
+        collapseWhitespace: process.env.NODE_ENV === 'production',
+        removeComments: process.env.NODE_ENV === 'production',
+      },
       chunks: [`${page.replace(/\.pug/, '')}`, 'vendors', 'common'],
     })),
   ],

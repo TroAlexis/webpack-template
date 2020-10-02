@@ -17,7 +17,7 @@
 	- Images optimization.
 
 ## Usage:
-	- #### Structure:
+	- Structure:
 		- js files for pages are in 'src' page;
 		- pug templates for pages are in 'src/pug/pages';
 		- scss files for pages are in 'assets'

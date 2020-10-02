@@ -1,0 +1,14 @@
+.u-container {
+	max-width: 1230px;
+	margin: 0 auto;
+	@include media-sm {
+		padding: {
+			right: rem(20px);
+			left: rem(20px);
+		};
+	}
+	padding: {
+		right: rem(35px);
+		left: rem(35px);
+	};
+}
