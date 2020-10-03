@@ -7,6 +7,10 @@
     "airbnb",
     "plugin:react-pug/all"
   ],
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/extensions": 0
+  },
   "env": {
     "browser": true
   }

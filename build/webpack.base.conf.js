@@ -163,6 +163,7 @@ module.exports = {
   },
   resolve: {
     alias: ALIASES,
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new webpack.EnvironmentPlugin(['NODE_ENV']),
