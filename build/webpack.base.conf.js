@@ -17,6 +17,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 // Main const for directory paths
 const PATHS = {
+  root: path.resolve(__dirname, '..'),
   src: path.resolve(__dirname, '../src'),
   dist: path.resolve(__dirname, '../dist'),
   assets: 'assets',
@@ -57,7 +58,7 @@ module.exports = {
     filename: `${PATHS.assets}/js/[name].${(process.env.NODE_ENV === 'production') ? '[contenthash].' : ''}js`,
     path: PATHS.dist,
     pathinfo: process.env.NODE_ENV === 'production',
-    publicPath: '/react-monsters/',
+    publicPath: `/${path.relative(path.resolve(__dirname, '../..'), PATHS.root)}/`,
   },
   optimization: {
     splitChunks: process.env.NODE_ENV === 'production' ? {
@@ -116,6 +117,9 @@ module.exports = {
         {
           loader: 'css-loader',
           options: {
+            modules: {
+              localIdentName: process.env.NODE_ENV === 'development' ? '[path]_[name]_[local]' : '[hash:base64]',
+            },
             sourceMap: true,
             importLoaders: 1,
           },
@@ -144,6 +148,9 @@ module.exports = {
         {
           loader: 'css-loader',
           options: {
+            modules: {
+              localIdentName: process.env.NODE_ENV === 'development' ? '[path]_[name]_[local]' : '[hash:base64]',
+            },
             sourceMap: true,
             importLoaders: 1,
           },
@@ -164,6 +171,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Enable has in production mode only (prevents HMR in development)
       filename: `${PATHS.assets}/css/[name].${(process.env.NODE_ENV === 'production') ? '[contenthash].' : ''}css`,
+      chunkFilename: `${PATHS.assets}/css/[name].${(process.env.NODE_ENV === 'production') ? '[contenthash].' : ''}css`,
     }),
     //  Copy images, fonts, static files to dist folder.
     new CopyWebpackPlugin({
