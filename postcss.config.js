@@ -17,5 +17,15 @@ module.exports = {
         },
       ],
     },
+    // put your font variants there along with the font-weight and formats in the array
+    'postcss-font-magician': {
+      variants: {
+        Rubik: {
+          400: [],
+          500: [],
+          700: [],
+        },
+      },
+    },
   },
 };
