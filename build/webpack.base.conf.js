@@ -17,7 +17,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 // Main const for directory paths
 const PATHS = {
-  root: path.resolve(__dirname, '..'),
+  dirname: path.relative(path.resolve(__dirname, '../..'), path.resolve(__dirname, '..')),
   src: path.resolve(__dirname, '../src'),
   dist: path.resolve(__dirname, '../dist'),
   assets: 'assets',
@@ -58,7 +58,7 @@ module.exports = {
     filename: `${PATHS.assets}/js/[name].${(process.env.NODE_ENV === 'production') ? '[contenthash].' : ''}js`,
     path: PATHS.dist,
     pathinfo: process.env.NODE_ENV === 'production',
-    publicPath: `/${path.relative(path.resolve(__dirname, '../..'), PATHS.root)}/`,
+    publicPath: `/${PATHS.dirname}/`,
   },
   optimization: {
     splitChunks: process.env.NODE_ENV === 'production' ? {

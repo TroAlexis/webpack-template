@@ -38,7 +38,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     host: '0.0.0.0',
     port: 8081,
     open: true,
-    openPage: 'http://localhost:8081',
+    openPage: `http://localhost:8081/${baseWebpackConfig.externals.paths.dirname}/`,
     overlay: {
       warnings: true,
       errors: true,
