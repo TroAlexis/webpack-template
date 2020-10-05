@@ -15,8 +15,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // https://github.com/geowarin/friendly-errors-webpack-plugin
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
+const isProd = process.env.NODE_ENV === 'production';
+
 // Main const for directory paths
 const PATHS = {
+  dirname: path.relative(path.resolve(__dirname, '../..'), path.resolve(__dirname, '..')),
   src: path.resolve(__dirname, '../src'),
   dist: path.resolve(__dirname, '../dist'),
   assets: 'assets',
@@ -46,6 +49,30 @@ ENTRIES_LIST.forEach((entry) => {
   ENTRIES[`${entry.replace(/\.js/, '')}`] = `${PATHS.src}/${entry}`;
 });
 
+const CSS_LOADERS = [
+  {
+    loader: MiniCssExtractPlugin.loader,
+    // Enable HMR only in development mode.
+    options: {
+      hmr: !isProd,
+      reloadAll: !isProd,
+    },
+  },
+  {
+    loader: 'css-loader',
+    options: {
+      modules: {
+        auto: /\.module\.\w+$/i,
+        localIdentName: !isProd ? '[path]_[name]_[local]' : '[hash:base64]',
+      },
+      sourceMap: true,
+    },
+  }, {
+    loader: 'postcss-loader',
+    options: { sourceMap: true, config: { path: './postcss.config.js' } },
+  },
+];
+
 module.exports = {
   // BASE config
   externals: {
@@ -53,13 +80,13 @@ module.exports = {
   },
   entry: ENTRIES,
   output: {
-    filename: `${PATHS.assets}/js/[name].${(process.env.NODE_ENV === 'production') ? '[contenthash].' : ''}js`,
+    filename: `${PATHS.assets}/js/[name].${isProd ? '[contenthash].' : ''}js`,
     path: PATHS.dist,
-    pathinfo: process.env.NODE_ENV === 'production',
-    publicPath: '/',
+    pathinfo: isProd,
+    publicPath: `/${PATHS.dirname}/`,
   },
   optimization: {
-    splitChunks: process.env.NODE_ENV === 'production' ? {
+    splitChunks: isProd ? {
       cacheGroups: {
         vendor: {
           name: 'vendors',
@@ -75,8 +102,8 @@ module.exports = {
         },
       },
     } : false,
-    removeAvailableModules: process.env.NODE_ENV === 'production',
-    removeEmptyChunks: process.env.NODE_ENV === 'production',
+    removeAvailableModules: isProd,
+    removeEmptyChunks: isProd,
   },
   module: {
     rules: [{
@@ -92,36 +119,19 @@ module.exports = {
       loader: 'file-loader',
       options: {
         outputPath: `${PATHS.assets}/fonts`,
-        name: `[name]${process.env.NODE_ENV === 'production' ? '-[contenthash]' : ''}.[ext]`,
+        name: `[name]${isProd ? '-[contenthash]' : ''}.[ext]`,
       },
     }, {
       test: /\.(png|jpe?g|gif|svg)$/i,
       loader: 'file-loader',
       options: {
         outputPath: `${PATHS.assets}/images`,
-        name: `[name]${process.env.NODE_ENV === 'production' ? '-[contenthash]' : ''}.[ext]`,
+        name: `[name]${isProd ? '-[contenthash]' : ''}.[ext]`,
       },
     }, {
       test: /\.scss$/,
       use: [
-        {
-          loader: MiniCssExtractPlugin.loader,
-          // Enable HMR only in development mode.
-          options: {
-            hmr: process.env.NODE_ENV === 'development',
-            reloadAll: process.env.NODE_ENV === 'development',
-          },
-        },
-        {
-          loader: 'css-loader',
-          options: {
-            sourceMap: true,
-            importLoaders: 1,
-          },
-        }, {
-          loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: './postcss.config.js' } },
-        },
+        ...CSS_LOADERS,
         {
           loader: 'resolve-url-loader',
         }, {
@@ -132,24 +142,7 @@ module.exports = {
     }, {
       test: /\.css$/,
       use: [
-        {
-          loader: MiniCssExtractPlugin.loader,
-          // Enable HMR only in development mode.
-          options: {
-            hmr: process.env.NODE_ENV === 'development',
-            reloadAll: process.env.NODE_ENV === 'development',
-          },
-        },
-        {
-          loader: 'css-loader',
-          options: {
-            sourceMap: true,
-            importLoaders: 1,
-          },
-        }, {
-          loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: './postcss.config.js' } },
-        },
+        ...CSS_LOADERS,
       ],
     }],
   },
@@ -162,7 +155,8 @@ module.exports = {
     //  Extract css into separate files from html.
     new MiniCssExtractPlugin({
       // Enable has in production mode only (prevents HMR in development)
-      filename: `${PATHS.assets}/css/[name].${(process.env.NODE_ENV === 'production') ? '[contenthash].' : ''}css`,
+      filename: `${PATHS.assets}/css/[name].${isProd ? '[contenthash].' : ''}css`,
+      chunkFilename: `${PATHS.assets}/css/[name].${isProd ? '[contenthash].' : ''}css`,
     }),
     //  Copy images, fonts, static files to dist folder.
     new CopyWebpackPlugin({
@@ -176,8 +170,8 @@ module.exports = {
       filename: `./${page.replace(/\.pug/, '.html')}`,
       favicon: `${PATHS.src}/${PATHS.assets}/img/favicon.ico`,
       minify: {
-        collapseWhitespace: process.env.NODE_ENV === 'production',
-        removeComments: process.env.NODE_ENV === 'production',
+        collapseWhitespace: isProd,
+        removeComments: isProd,
       },
       chunks: [`${page.replace(/\.pug/, '')}`, 'vendors', 'common'],
     })),
