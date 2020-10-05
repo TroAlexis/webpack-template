@@ -1,7 +1,6 @@
 // WEBPACK ENTRY FILE MAIN
 
-// JS
-import './js';
+// JS here
 
 // SCSS
 import 'Scss/shared.scss';
