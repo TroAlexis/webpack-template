@@ -29,7 +29,7 @@
     "url": "https://github.com/TroAlexis/react-monsters/issues"
   },
   "dependencies": {
-    "formatter.js-pebble": "^0.1.8",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -42,6 +42,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-jsx-css-modules": "^1.0.0",
     "babel-plugin-transform-react-pug": "^7.0.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.3",

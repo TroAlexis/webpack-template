@@ -9,9 +9,12 @@
   ],
   "rules": {
     "import/no-unresolved": "off",
-    "import/extensions": 0
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": "off"
   },
   "env": {
+    "es6": true,
+    "node": true,
     "browser": true
   }
 }

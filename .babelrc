@@ -1,6 +1,11 @@
 {
   "plugins": [
-    "transform-react-pug",
+    ["transform-react-pug", {
+      "classAttribute": "styleName"
+    }],
+    ["transform-jsx-css-modules", {
+      "pathToStyles": "^\\.\\/\\w+.module$"
+    }],
     "transform-class-properties"
   ],
   "presets": [
