@@ -29,7 +29,7 @@
   },
   "homepage": "https://troalexis.github.io/toxin-fsd",
   "dependencies": {
-    "formatter.js-pebble": "^0.1.8",
+    "formatter.js-pebble": "^0.1.8"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
