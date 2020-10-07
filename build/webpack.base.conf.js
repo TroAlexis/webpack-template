@@ -65,7 +65,7 @@ const CSS_LOADERS = [
     options: {
       modules: {
         auto: /\.module\.\w+$/i,
-        localIdentName: !isProd ? '[path]_[name]_[local]' : '[hash:base64]',
+        localIdentName: !isProd ? '[name]_[local]_[hash:base64:5]' : '[hash:base64:5]',
       },
       sourceMap: true,
     },
@@ -114,6 +114,9 @@ module.exports = {
     }, {
       test: /\.(js|jsx)$/,
       loader: 'babel-loader',
+      options: {
+        cacheDirectory: true,
+      },
       exclude: '/node_modules/',
     }, {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -170,7 +173,7 @@ module.exports = {
     // Automatic creation of any html pages
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}/${page}.pug`,
-      filename: `./${page}`,
+      filename: `./${page}.html`,
       favicon: `${PATHS.src}/${PATHS.assets}/img/favicon.ico`,
       minify: {
         collapseWhitespace: isProd,
