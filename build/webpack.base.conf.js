@@ -37,17 +37,17 @@ const ALIASES = {
 };
 
 // Pages const for HtmlWebpackPlugin
-const PAGES_DIR = `${PATHS.src}/pug/pages/`;
+const PAGES_DIR = `${PATHS.src}/pages/`;
 // Entries const for entry option
-const ENTRIES_DIR = `${PATHS.src}`;
+const ENTRIES_DIR = `${PATHS.src}/pages/`;
 // All pages to build
-const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'));
+const PAGES = fs.readdirSync(PAGES_DIR);
 // All entries to take.
-const ENTRIES_LIST = fs.readdirSync(ENTRIES_DIR).filter((fileName) => fileName.endsWith('.js'));
+const ENTRIES_LIST = fs.readdirSync(ENTRIES_DIR);
 const ENTRIES = {};
 // Fill ENTRIES object with all entry points
 ENTRIES_LIST.forEach((entry) => {
-  ENTRIES[`${entry.replace(/\.js/, '')}`] = `${PATHS.src}/${entry}`;
+  ENTRIES[`${entry}`] = `${ENTRIES_DIR}/${entry}/${entry}.js`;
 });
 
 const CSS_LOADERS = [
@@ -168,14 +168,14 @@ module.exports = {
     }),
     // Automatic creation of any html pages
     ...PAGES.map((page) => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/, '.html')}`,
+      template: `${PAGES_DIR}/${page}/${page}.pug`,
+      filename: `./${page}`,
       favicon: `${PATHS.src}/${PATHS.assets}/img/favicon.ico`,
       minify: {
         collapseWhitespace: isProd,
         removeComments: isProd,
       },
-      chunks: [`${page.replace(/\.pug/, '')}`, 'vendors', 'common'],
+      chunks: [`${page}`, 'vendors', 'common'],
     })),
   ],
 };
