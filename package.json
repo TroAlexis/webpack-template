@@ -26,10 +26,12 @@
   "license": "MIT",
   "dependencies": {
     "babel-plugin-react-css-modules": "^5.2.6",
+    "core-js": "^3.6.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",

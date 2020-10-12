@@ -1,4 +1,7 @@
 // WEBPACK ENTRY FILE MAIN
+// ASYNC AWAIT SUPPORT
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 // JS here
 
