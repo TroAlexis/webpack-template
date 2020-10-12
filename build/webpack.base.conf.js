@@ -75,6 +75,11 @@ const CSS_LOADERS = [
   },
 ];
 
+const FILE_LOADER_IMG_OPTS = {
+  outputPath: `${PATHS.assets}/images`,
+  name: `[name]${isProd ? '-[contenthash]' : ''}.[ext]`,
+};
+
 module.exports = {
   // BASE config
   externals: {
@@ -127,12 +132,16 @@ module.exports = {
         name: `[name]${isProd ? '-[contenthash]' : ''}.[ext]`,
       },
     }, {
-      test: /\.(png|jpe?g|gif|svg)$/i,
+      test: /\.(png|jpe?g|gif)$/i,
       loader: 'file-loader',
-      options: {
-        outputPath: `${PATHS.assets}/images`,
-        name: `[name]${isProd ? '-[contenthash]' : ''}.[ext]`,
-      },
+      options: FILE_LOADER_IMG_OPTS,
+    }, {
+      // SVGR support along with file-loader.
+      test: /\.(svg)$/i,
+      use: ['@svgr/webpack', {
+        loader: 'file-loader',
+        options: FILE_LOADER_IMG_OPTS,
+      }],
     }, {
       test: /\.scss$/,
       use: [
