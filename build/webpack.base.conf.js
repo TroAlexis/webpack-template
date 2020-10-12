@@ -160,7 +160,6 @@ module.exports = {
     new FriendlyErrorsWebpackPlugin(),
     //  Extract css into separate files from html.
     new MiniCssExtractPlugin({
-      // Enable has in production mode only (prevents HMR in development)
       filename: `${PATHS.assets}/css/[name].${isProd ? '[contenthash].' : ''}css`,
       chunkFilename: `${PATHS.assets}/css/[name].${isProd ? '[contenthash].' : ''}css`,
     }),

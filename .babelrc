@@ -41,6 +41,11 @@
           "webpackHotModuleReloading": true
         }]
       ]
+    },
+    "development": {
+      "plugins": [
+        "react-refresh/babel"
+      ]
     }
   }
 }

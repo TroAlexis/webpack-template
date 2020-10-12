@@ -1,3 +1,5 @@
+// ReactRefresh
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 // Webpack
 const webpack = require('webpack');
 // Merge tool to merge configs
@@ -49,6 +51,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',
     }),
+    new ReactRefreshWebpackPlugin(),
   ],
 });
 
