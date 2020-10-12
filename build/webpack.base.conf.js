@@ -64,7 +64,7 @@ const CSS_LOADERS = [
     loader: 'css-loader',
     options: {
       modules: {
-        auto: /\.module\.\w+$/i,
+        auto: /^((?!global).)*$/i,
         localIdentName: !isProd ? '[name]_[local]_[hash:base64:5]' : '[hash:base64:5]',
       },
       sourceMap: true,
