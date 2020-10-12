@@ -1,31 +1,27 @@
-@import '~Scss/utils/global';
-@import '~Scss/utils/reset';
+@import '~Scss/config';
+@import '~Scss/reset';
+@import '~Scss/ui';
 
 html {
 	height: 100%;
 
 	color: $color-font--main;
 	font-size: $font-size--main;
-	@include media-x-lg {
-		font-size: 16px;
-	}
-	@include media-lg {
+	@include mq('desktop', max) {
 		font-size: 15px;
 	}
-	@include media-m {
+	@include mq('tablet', max) {
 		font-size: 14px;
 	}
-	@include media-sm {
+	@include mq('phablet', max) {
 		font-size: 13px;
 	}
-	@include media(420px) {
+	@include mq('phone', max) {
 		font-size: 12px;
 	}
 }
 
 body {
-	height: 100%;
-
 	margin: 0;
 	padding: 0;
 
@@ -33,11 +29,6 @@ body {
 	font-size: $font-size--main;
 	font-family: $font--main;
 
-	background-color: #6666fd;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-.root {
-	height: 100%;
 }

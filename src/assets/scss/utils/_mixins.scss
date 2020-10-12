@@ -1,0 +1,50 @@
+// px to rem
+@function rem($pixels, $context: $font-size--main) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+	@return $pixels / $context * 1rem;
+}
+
+// SET SIZE
+@mixin size($width,$height: $width) {
+	width: $width;
+	height: $height;
+}
+// CENTER A BLOCK ELEMENT
+@mixin push--auto {
+	margin: {
+		right: auto;
+		left: auto;
+	}
+}
+// Pseudo element setting mixin
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+	position: $pos;
+
+	display: $display;
+
+	content: $content;
+}
+
+// MEDIA QUERIES MIXINS
+@mixin mq($width, $type: min) {
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+		@if $type == max {
+			$width: $width - 1px;
+		}
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
+	@else {
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
+}
+// END MEDIA QUERIES

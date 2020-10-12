@@ -1,0 +1,26 @@
+// Font
+$font--main: 'Rubik', sans-serif;
+
+// Size
+$color-font--main: #000;
+$font-size--main: 16px;
+$font-weight--main: 400;
+$line-height--main: 1;
+
+
+$width-limiting: 1230px;
+
+// Main colors
+$colors: (); // your map of colors.
+
+// Map for breakpoints
+$breakpoints: (
+	'phone':        400px,
+	'phone-wide':   480px,
+	'phablet':      560px,
+	'tablet-small': 640px,
+	'tablet':       768px,
+	'tablet-wide':  1024px,
+	'desktop':      1248px,
+	'desktop-wide': 1440px
+);
