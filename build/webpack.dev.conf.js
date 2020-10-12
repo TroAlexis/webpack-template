@@ -40,11 +40,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     host: '0.0.0.0',
     port: 8081,
     open: true,
-    openPage: `http://localhost:8081/${baseWebpackConfig.externals.paths.dirname}/`,
+    openPage: 'http://localhost:8081/',
     overlay: {
       warnings: true,
       errors: true,
     },
+    historyApiFallback: true,
   },
   plugins: [
     new BundleAnalyzerPlugin(),
