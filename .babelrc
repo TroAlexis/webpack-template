@@ -15,7 +15,8 @@
           "syntax": "postcss-scss"
         }
       },
-      "webpackHotModuleReloading": true
+      "webpackHotModuleReloading": true,
+      "handleMissingStyleName": "warn"
     }],
     ["transform-react-pug", {
       "classAttribute": "styleName"
