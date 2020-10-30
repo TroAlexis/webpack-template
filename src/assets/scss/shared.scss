@@ -1,27 +1,10 @@
-@import '~Scss/utils/libs';
-@import '~Scss/utils/vars';
-@import '~Scss/utils/mixins';
-@import '~Scss/utils/fonts';
-@import '~Scss/utils/placeholders';
-@import '~Scss/utils/reset';
+@import 'utils/reset';
+@import 'utils/fonts';
+@import 'utils/global';
 
 html {
-	height: 100%;
-
 	color: $color-font--main;
 	font-size: $font-size--main;
-	@include media-x-lg {
-		font-size: 16px;
-	}
-	@include media-lg {
-		font-size: 15px;
-	}
-	@include media-m {
-		font-size: 14px;
-	}
-	@include media-sm {
-		font-size: 13px;
-	}
 }
 
 body {
@@ -30,6 +13,7 @@ body {
 
 	font-weight: $font-weight--main;
 	font-size: $font-size--main;
+	font-style: normal;
 	font-family: $font--main;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -58,4 +42,4 @@ li {
 
 // Modules
 // @import "~Scss/modules/my-module.scss";
-@import '~Scss/utils/ui';
+@import 'utils/ui';
