@@ -9,6 +9,16 @@
 	@return $pixels / $context * 1rem;
 }
 
+@function em($pixels, $context: $font-size--main) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+	@return $pixels / $context * 1em;
+}
+
 // SET SIZE
 @mixin size($width,$height: $width) {
 	width: $width;
