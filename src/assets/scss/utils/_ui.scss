@@ -1,0 +1,4 @@
+.u-container {
+	@include push--auto;
+	max-width: $width-limiting;
+}
