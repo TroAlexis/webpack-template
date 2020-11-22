@@ -1,35 +1,9 @@
 @font-face {
 	font-weight: normal;
-	font-family: 'TimesNewRomanRegular';
+	font-family: 'Your font';
 	font-style: normal;
-	src: url('~Fonts/TimesNewRomanRegular.eot?#iefix') format('embedded-opentype'),
-		url('~Fonts/TimesNewRomanRegular.woff') format('woff'),
-		url('~Fonts/TimesNewRomanRegular.ttf') format('truetype');
-}
-
-@font-face {
-	font-weight: normal;
-	font-family: 'TimesNewRomanBold';
-	font-style: normal;
-	src: url('~Fonts/TimesNewRomanBold.eot?#iefix') format('embedded-opentype'),
-		url('~Fonts/TimesNewRomanBold.woff') format('woff'),
-		url('~Fonts/TimesNewRomanBold.ttf') format('truetype');
-}
-
-@font-face {
-	font-weight: normal;
-	font-family: 'TimesNewRomanItalic';
-	font-style: normal;
-	src: url('~~Fonts/TimesNewRomanItalic.eot?#iefix') format('embedded-opentype'),
-		url('~~Fonts/TimesNewRomanItalic.woff') format('woff'),
-		url('~~Fonts/TimesNewRomanItalic.ttf') format('truetype');
-}
-
-@font-face {
-	font-weight: normal;
-	font-family: 'TimesNewRomanBoldItalic';
-	font-style: normal;
-	src: url('~Fonts/TimesNewRomanBoldItalic.eot?#iefix') format('embedded-opentype'),
-		url('~Fonts/TimesNewRomanBoldItalic.woff') format('woff'),
-		url('~Fonts/TimesNewRomanBoldItalic.ttf') format('truetype');
+	src: local('Your-font'),
+		url('~Fonts/Your-font.eot?#iefix') format('embedded-opentype'),
+		url('~Fonts/Your-font.woff') format('woff'),
+		url('~Fonts/Your-font.ttf') format('truetype');
 }
