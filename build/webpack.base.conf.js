@@ -164,11 +164,11 @@ module.exports = {
       chunkFilename: `${PATHS.assets}/css/[name].${isProd ? '[contenthash].' : ''}css`,
     }),
     //  Copy images, fonts, static files to dist folder.
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: `${PATHS.src}/static`, to: '' },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     { from: `${PATHS.src}/static`, to: '' },
+    //   ],
+    // }),
     // Automatic creation of any html pages
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
