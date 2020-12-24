@@ -12,6 +12,7 @@
     "no-param-reassign": ["error", {"props": false}]
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "jquery": true
   }
 }
