@@ -84,7 +84,7 @@ module.exports = {
     filename: `${PATHS.assets}/js/[name].${isProd ? '[contenthash].' : ''}js`,
     path: PATHS.dist,
     pathinfo: isProd,
-    publicPath: `/`,
+    publicPath: isProd ? '' : '/',
   },
   optimization: {
     splitChunks: isProd ? {
