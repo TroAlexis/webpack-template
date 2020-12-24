@@ -23,24 +23,30 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   plugins: [
     //  Clean dist folder.
     new CleanWebpackPlugin(),
-    new ESLintPlugin({
-      context: baseWebpackConfig.externals.paths.src,
-      fix: true,
-    }),
-    new StylelintPlugin({
-      fix: true,
-    }),
+
+    // new ESLintPlugin({
+    //   context: baseWebpackConfig.externals.paths.src,
+    //   fix: true,
+    // }),
+    // new StylelintPlugin({
+    //   fix: true,
+    // }),
+
     // Optimize images
     new ImageMinPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       jpegtran: null,
       // Optimization 1-7 levels.
-      optipng: { optimizationLevel: 7 },
+      optipng: null,
       // Optimization 1-3 levels.
       gifsicle: { optimizationLevel: 3 },
+      pngquant: {
+        strip: true,
+        quality: '80-90',
+      },
       plugins: [
         ImageMinMozJpeg({
-          quality: 73,
+          quality: 85,
           // progressive or arithmetic encoding available
           progressive: true,
         }),
