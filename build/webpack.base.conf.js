@@ -109,7 +109,11 @@ module.exports = {
   module: {
     rules: [{
       test: /\.pug$/,
-      loader: ['pug-loader'],
+      loader: 'pug-loader',
+      options: {
+        pretty: true,
+      },
+      exclude: '/node_modules/',
     }, {
       test: /\.js$/,
       loader: 'babel-loader',
