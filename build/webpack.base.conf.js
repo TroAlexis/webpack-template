@@ -54,6 +54,7 @@ const CSS_LOADERS = [
     loader: MiniCssExtractPlugin.loader,
     // Enable HMR only in development mode.
     options: {
+      publicPath: '../../',
       hmr: !isProd,
       reloadAll: !isProd,
     },
