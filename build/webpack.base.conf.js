@@ -173,9 +173,7 @@ module.exports = {
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/, '.html')}`,
-      favicon: `${PATHS.src}/${PATHS.assets}/img/favicon.ico`,
       minify: {
-        collapseWhitespace: isProd,
         removeComments: isProd,
       },
       chunks: [`${page.replace(/\.pug/, '')}`, 'vendors', 'common'],
