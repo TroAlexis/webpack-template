@@ -45,7 +45,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     },
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
     new webpack.SourceMapDevToolPlugin({
       filename: '[file].map',
     }),
