@@ -4,4 +4,4 @@
 import './js';
 
 // SCSS
-import './assets/scss/shared.scss';
+import './assets/scss/index.scss';
