@@ -7,3 +7,58 @@
 //		url('~Fonts/Your-font.woff') format('woff'),
 //		url('~Fonts/Your-font.ttf') format('truetype');
 //}
+
+._h1-like {
+  font-size: rem($f-h1);
+  line-height: 100%;
+
+  @include fluid-type(320px, 1024px,$f-h1-sm, $f-h1);
+}
+
+._h2-like {
+  font-size: rem($f-h2);
+  @include fluid-type(320px, 1024px,$f-h3, $f-h2);
+  line-height: 120%;
+}
+
+._h3-like {
+  font-size: rem($f-h3);
+  line-height: 125%;
+  @include fluid-type(320px, 1024px,$f-h4, $f-h3);
+}
+
+._h4-like {
+  font-size: rem($f-h4);
+  line-height: 133%;
+
+  @include fluid-type(320px, 1024px,$f-h4-sm, $f-h4);
+}
+
+._fz-main {
+
+  &-lg {
+    @include fluid-type(320px, 1024px,$f-main, $f-main-lg);
+  }
+}
+
+
+.heading {
+	text-align: center;
+    color: $c-regal-blue;
+    font-weight: 900;
+    @include mq('phone-wide', max) {
+			text-align: left;
+		}
+
+    span {
+		color: $c-azure-radiance;
+	}
+}
+
+.slogan {
+	text-align: center;
+	font-weight: 500;
+	@include mq('phone-wide', max) {
+		text-align: left;
+	}
+}
