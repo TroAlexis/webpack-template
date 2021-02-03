@@ -1,3 +1,13 @@
+// map-deep-get($o-grid-default-config, "layouts", "M");
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+
 // px to rem
 @function rem($pixels, $context: $font-size--main) {
 	@if (unitless($pixels)) {
@@ -31,12 +41,12 @@
 
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
-      font-size: $min-font-size;
+      font-size: rem($min-font-size);
       @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        font-size: calc(#{rem($min-font-size)} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
       }
       @media screen and (min-width: $max-vw) {
-        font-size: $max-font-size;
+        font-size: rem($max-font-size);
       }
     }
   }
