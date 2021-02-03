@@ -1,10 +1,22 @@
 @import 'utils/reset';
+@import 'utils/global';
 @import 'utils/fonts';
 @import 'utils/global';
 
 html {
 	color: $color-font--main;
-	font-size: $font-size--main;
+	font-size: rem($font-size--main);
+
+	@include mq('desktop', max) {
+		font-size: rem($font-size--main);
+	}
+
+	@include mq('tablet-wide', max) {
+		font-size: rem($font-size--main);
+	}
+	@include mq('tablet', max) {
+		font-size: rem($font-size--main);
+	}
 }
 
 body {
@@ -12,7 +24,7 @@ body {
 	padding: 0;
 
 	font-weight: $font-weight--main;
-	font-size: $font-size--main;
+	font-size: rem($font-size--main);
 	font-family: $font--main;
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;
