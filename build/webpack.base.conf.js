@@ -112,6 +112,7 @@ module.exports = {
       loader: 'pug-loader',
       options: {
         pretty: true,
+        root: ALIASES.Pug,
       },
       exclude: '/node_modules/',
     }, {
