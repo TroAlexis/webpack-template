@@ -36,6 +36,10 @@
 
 ._fz-main {
 
+		&-sm {
+				@include fluid-type(320px, 1024px,$f-main-sm, $f-main);
+		}
+
   &-lg {
     @include fluid-type(320px, 1024px,$f-main, $f-main-lg);
   }
